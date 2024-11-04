@@ -27,7 +27,7 @@ environmentVariables:
 
 hosts:
   - name: Addon
-    identifier: addon
+    identifier: postgres
     urlFormat: '[label].[default-domain]'
 
 logs:
@@ -37,7 +37,7 @@ logs:
     command: tail -n 2000 -F /var/log/addon.log
 
 images:
-  - identifier: app
+  - identifier: postgres
     repository: app
     dockerfile: Dockerfile
     image: ghcr.io/nemesysltd/diploi-nextjs-psql-template
@@ -48,7 +48,7 @@ images:
       - staging
 
 storage:
-  - identifier: app
+  - identifier: postgres
     stages:
       - development
     sizeMiB: 6144
